@@ -1,0 +1,62 @@
+{
+	"name": "try",
+	"displayName": "console-me",
+	"description": "console-me",
+	"version": "0.0.2",
+	"publisher": "Aish",
+	"engines": {
+		"vscode": "^1.42.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.insertConsole",
+		"onCommand:extension.deleteAllConsole"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.insertConsole",
+				"title": "Keep console"
+			},
+			{
+				"command": "extension.deleteAllConsole",
+				"title": "Delete console"
+			}
+		],
+		"keybindings": [
+            {
+                "command": "extension.insertConsole",
+                "key": "shift+ctrl+b",
+                "mac": "shift+cmd+b"
+            },
+            {
+                "command": "extension.deleteAllConsole",
+                "key": "shift+ctrl+d",
+                "mac": "shift+cmd+d"
+			}
+        ]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "yarn run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.1",
+		"@types/node": "^12.11.7",
+		"@types/node-fetch": "^2.5.5",
+		"@types/vscode": "^1.42.0",
+		"eslint": "^6.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.0.1",
+		"typescript": "^3.7.5",
+		"vscode-test": "^1.3.0"
+	},
+	"dependencies": {
+		"node-fetch": "^2.6.0"
+	}
+}
